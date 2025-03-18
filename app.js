@@ -17,3 +17,15 @@ function agregarAmigo() {
     //Mostrar la lista actualizada 
     actualizarLista();
 }
+function actualizarLista() {
+    //Obtener elementos de la lista HTML
+    let lista = document.getElementById("listaAmigos");
+    //Limpiar la lista antes de actualizar
+    lista.innerHTML = "";
+    //Recorrer el array de amigos y agregar cada uno como <li>
+    for (let amigo of amigos) {
+        let li = document.createElement("li"); //Crear un nuevo elemento <li>
+        li.textContent = amigo; //Asignar el nombre del amigo al <li>
+        lista.appendChild(li); //Agregarlo a la lista en el HTML
+    }
+}
